@@ -1,0 +1,8 @@
+Nsg is applied , vnet peering is created
+
+nsg_ids is uncommented in vnet.tf
+vnet-peering , count set to 1
+
+added default route to spoke resource "azurerm_subnet_route_table_association" "RTASSOCIATION" {
+  count = 1
+      address_prefix = "5.5.5.5/32"

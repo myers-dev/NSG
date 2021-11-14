@@ -1,0 +1,4 @@
+Inital scenario ; no nsg applied
+
+nsg_ids is commented in vnet.tf
+vnet-peering , count set to 0

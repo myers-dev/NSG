@@ -1,0 +1,4 @@
+Nsg is applied , vnet peering is created
+
+nsg_ids is uncommented in vnet.tf
+vnet-peering , count set to 1
