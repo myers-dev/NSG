@@ -56,7 +56,7 @@ Script active_nsg collects active network security rules from the virtual machin
 
 It can be done by uncommenting nsg_id in the vnet_module
 
-```JSON
+```
   nsg_ids = {
     # "default" = module.nsg.network_security_group_id 
   }
@@ -75,7 +75,7 @@ Full output can be found [here](output/scenario1/hub-vnet-vm)
 ### NSG in Peered VNETs
 By adding VNET peering between two VNETs, the topology is expanded. The count in vnet-peering.tf can be changed to 1 for this purpose
 
-```JSON
+```
 module "vnet-peering" {
 
     count = 1
@@ -94,7 +94,7 @@ The VirtualNetwork tag gets changed immediately and NSG rules for ingress and eg
 
 By attaching the route table with Default Route to the default subnet of spoke VNET, the topology is further expanded. It can be done by changing count to 1 in azurerm_subnet_route_table_association.
 
-```JSON
+```
 resource "azurerm_subnet_route_table_association" "RTASSOCIATION" {
   count = 1
   subnet_id      = module.vnet[1].vnet_subnets[0]
@@ -118,7 +118,7 @@ Portal view:
 
 Modifying the default route to be more specific can be done by changing azurerm_route_table/route/address_prefix to something more specific. 
 
-```JSON
+```
 resource "azurerm_route_table" "RT" {
   name                          = "RT"
   location                      = var.location
